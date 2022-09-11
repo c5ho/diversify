@@ -17,6 +17,8 @@ import ListItemText from "@mui/material/ListItemText";
 // import MailIcon from "@mui/icons-material/Mail";
 import FlagIcon from "@mui/icons-material/Flag";
 import BuildIcon from "@mui/icons-material/Build";
+import GroupsIcon from "@mui/icons-material/Groups";
+import TextSnippetIcon from "@mui/icons-material/TextSnippet";
 
 const Container = styled.div`
   background: #36393e;
@@ -50,11 +52,6 @@ const Container = styled.div`
 const drawerWidth = 240;
 
 export default function ClippedDrawer() {
-  const icons = {
-    1: <FlagIcon />,
-    2: <BuildIcon />,
-  };
-
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
@@ -82,31 +79,41 @@ export default function ClippedDrawer() {
         <Toolbar />
         <Box sx={{ overflow: "auto" }}>
           <List>
-            {["Goals", "Skills", "Resources", "Milestones"].map(
-              (text, index) => (
-                <ListItem key={text} disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      {index % 2 === 0 ? <FlagIcon /> : <BuildIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItemButton>
-                </ListItem>
-              )
-            )}
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <FlagIcon />
+                </ListItemIcon>
+                <ListItemText primary="Goals" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <BuildIcon />
+                </ListItemIcon>
+                <ListItemText primary="Skills" />
+              </ListItemButton>
+            </ListItem>
           </List>
           <Divider />
           <List>
-            {["Meetings", "Notes"].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <FlagIcon /> : <BuildIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <GroupsIcon />
+                </ListItemIcon>
+                <ListItemText primary="Meetings" />
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  <TextSnippetIcon />
+                </ListItemIcon>
+                <ListItemText primary="Notes" />
+              </ListItemButton>
+            </ListItem>
           </List>
         </Box>
       </Drawer>
