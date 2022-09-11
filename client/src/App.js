@@ -19,26 +19,6 @@ import FlagIcon from "@mui/icons-material/Flag";
 import BuildIcon from "@mui/icons-material/Build";
 import GroupsIcon from "@mui/icons-material/Groups";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
-import { purple, indigo } from "@mui/material/colors";
-
-import { createTheme } from "@mui/material/styles";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      light: "#757ce8",
-      main: "#3f50b5",
-      dark: "#002884",
-      contrastText: "#fff",
-    },
-    secondary: {
-      light: "#ff7961",
-      main: "#f44336",
-      dark: "#ba000d",
-      contrastText: "#000",
-    },
-  },
-});
 
 const Container = styled.div`
   background: #36393e;
@@ -104,7 +84,7 @@ export default function ClippedDrawer() {
                 <ListItemIcon>
                   <FlagIcon />
                 </ListItemIcon>
-                <ListItemText primary="My Goals" />
+                <ListItemText primary="Goals" />
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
@@ -112,7 +92,7 @@ export default function ClippedDrawer() {
                 <ListItemIcon>
                   <BuildIcon />
                 </ListItemIcon>
-                <ListItemText primary="My Skills" />
+                <ListItemText primary="Skills" />
               </ListItemButton>
             </ListItem>
           </List>
@@ -142,40 +122,25 @@ export default function ClippedDrawer() {
         <Container>
           {" "}
           <List>
-            {[
-              { index: 1, text: "Goal 1" },
-              { index: 2, text: "Goal 2" },
-              { index: 3, text: "Goal 3" },
-              { index: 4, text: "Goal 4" },
-              { index: 5, text: "Goal 5" },
-              { index: 6, text: "Goal 6" },
-              { index: 7, text: "Goal 7" },
-              { index: 8, text: "Goal 8" },
-            ]
-              .reverse()
-              .map((item) => (
-                <Card
-                  sx={{
-                    margin: 2,
-                    backgroundColor: indigo[100],
-                    height: (300 * item.index) / 10,
-                    width: 400,
-                    borderRadius: 5,
-                    color: indigo[700],
-                    font: "Inter",
-                    padding: 5,
-                    boxShadow: 10,
-                    // 0 10px 20px rgba(0, 0, 0, 0.25)
+            {[0, 1, 2, 3, 5, 6, 7, 8, 9].map((item) => (
+              <Card
+                sx={{
+                  margin: 2,
+                  // background: #fff,
+                  height: (300 * item) / 10 + 50,
+                  width: 400,
+                  // border-radius: 20
+                  // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 
-                    // display: flex;
-                    // flex-flow: column; // 5
-                    // justify-content: center;
-                    // align-items: center;
-                  }}
-                >
-                  {item.text}
-                </Card>
-              ))}
+                  // display: flex;
+                  // flex-flow: column; // 5
+                  // justify-content: center;
+                  // align-items: center;
+                }}
+              >
+                {item}
+              </Card>
+            ))}
           </List>
         </Container>
       </Box>
