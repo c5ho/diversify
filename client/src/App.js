@@ -19,7 +19,7 @@ import FlagIcon from "@mui/icons-material/Flag";
 import BuildIcon from "@mui/icons-material/Build";
 import GroupsIcon from "@mui/icons-material/Groups";
 import TextSnippetIcon from "@mui/icons-material/TextSnippet";
-import { purple, red } from "@mui/material/colors";
+import { purple, indigo } from "@mui/material/colors";
 
 import { createTheme } from "@mui/material/styles";
 
@@ -157,11 +157,15 @@ export default function ClippedDrawer() {
                 <Card
                   sx={{
                     margin: 2,
-                    backgroundColor: purple[200],
+                    backgroundColor: indigo[100],
                     height: (300 * item.index) / 10,
                     width: 400,
-                    // border-radius: 20
-                    // box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+                    borderRadius: 5,
+                    color: indigo[700],
+                    font: "Inter",
+                    padding: 5,
+                    boxShadow: 10,
+                    // 0 10px 20px rgba(0, 0, 0, 0.25)
 
                     // display: flex;
                     // flex-flow: column; // 5
